@@ -1,0 +1,83 @@
+/* ----- SPECIAL COLORS ----- */
+
+$warning: #8c4849;
+$explicit: $warning;
+$dnd: $warning;
+$afk: #b39a6f;
+$questionable: $afk;
+$online: #6b8f76;
+$safe: $online;
+
+/* ----- GENERAL COLORS ----- */
+
+$neutral-900: #232323;
+$neutral-800: #282828;
+$neutral-700: #3c3836;
+$neutral-600: #443f3d;
+$neutral-500: #4e4643;
+$neutral-400: #5e524d;
+$neutral-300: #7c6a63;
+$neutral-200: #94796f;
+$neutral-100: #ac8a7e;
+$neutral-50: #c3998a;
+
+$text-l: #474341;
+$text-d: #f0cfc0;
+
+/* ----- DEFAULT ROLE COLORS ----- */
+$teal-l: #1abc9c;
+$teal-d: #11806a;
+
+$green-l: #2ecc71;
+$green-d: #1f8b4c;
+
+$blue-l: #3498db;
+$blue-d: #206694;
+
+$purple-l: #9b59b6;
+$purple-d: #71368a;
+
+$rose-l: #e91e63;
+$rose-d: #ad1457;
+
+$yellow-l: #f1c40f;
+$yellow-d: #c27c0e;
+
+$orange-l: #e67e22;
+$orange-d: #a84300;
+
+$red-l: #e74c3c;
+$red-d: #992d22;
+
+$grey-l: #95a5a6;
+$grey-d: #798686;
+
+$slate-l: #607d8b;
+$slate-d: #546e7a;
+
+:root {
+  --font: Yu Gothic UI Light;
+  --font-japanese: Yu Gothic UI Light;
+  --settingsicons: 1;
+  --accentcolor: rgb(74, 104, 143);
+  --accentcolor2: rgb(130, 78, 128);
+  --linkcolor: rgb(83, 117, 130);
+  --mentioncolor: #b39a6f;
+  --successcolor: #6b8f76;
+  --warningcolor: rgb(204, 187, 157);
+  --dangercolor: #8c4849;
+
+  --textbrightest: #f0cfc0;
+  --textbrighter: rgb(214, 187, 174);
+  --textbright: rgb(189, 177, 172);
+  --textdark: rgb(128, 116, 111);
+  --textdarker: rgb(89, 84, 81);
+  --textdarkest: #474341;
+
+  --backgroundaccent: #323232;
+  --backgroundprimary: #3c3836;
+  --backgroundsecondary: #282828;
+  --backgroundsecondaryalt: #232323;
+  --backgroundtertiary: #232323;
+  --backgroundfloating: #232323;
+}

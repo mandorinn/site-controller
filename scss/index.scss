@@ -1,0 +1,185 @@
+@use "components/cssreset";
+@use "components/_mandorinnlib";
+@use "components/themes/discord" as disc;
+@use "components/themes/darkautumn" as da;
+@use "components/themes/gruvbox" as gb;
+@use "components/themes/tailwind" as tw;
+@use "components/themes/moody" as mdy;
+@use "components/themes/mgsv" as mgs;
+
+body[site_theme="none"] {
+  --body: #{disc.$neutral-900};
+  --conts: #{disc.$neutral-800};
+  --input: #{disc.$neutral-700};
+  --fc: #{disc.$text-d};
+  --fch: #{disc.$rose-l};
+  --accent: #{disc.$rose-l};
+  --ach: #{disc.$rose-d};
+}
+body[site_theme="coffee"] {
+  --body: #{da.$neutral-900};
+  --conts: #{da.$neutral-800};
+  --input: #{da.$neutral-700};
+  --fc: #{da.$text-d};
+  --fch: #{da.$rose-l};
+  --accent: #{da.$rose-l};
+  --ach: #{da.$rose-d};
+}
+body[site_theme="retro"] {
+  --body: #{gb.$dm-bg-500};
+  --conts: #{gb.$dm-bg-400};
+  --input: #{gb.$dm-bg-300};
+  --fc: #{gb.$dm-fg-100};
+  --fch: #{gb.$dm-purple-l};
+  --accent: #{gb.$dm-purple-l};
+  --ach: #{gb.$dm-purple-d};
+}
+body[site_theme="pink"] {
+  --body: #{tw.$pink-600};
+  --conts: #{tw.$pink-500};
+  --input: #{tw.$pink-400};
+  --fc: #{tw.$pink-50};
+  --fch: #{tw.$cyan-400};
+  --accent: #{tw.$cyan-400};
+  --ach: #{tw.$cyan-400};
+}
+body[site_theme="halloween"] {
+  --body: #{mdy.$neutral-900};
+  --conts: #{mdy.$neutral-800};
+  --input: #{mdy.$neutral-700};
+  --fc: #{mdy.$orange-l};
+  --fch: #{mdy.$purple-l};
+  --accent: #{mdy.$purple-l};
+  --ach: #{mdy.$purple-l};
+}
+body[site_theme="christmas"] {
+  --body: #{tw.$emerald-900};
+  --conts: #{tw.$emerald-800};
+  --input: #{tw.$emerald-700};
+  --fc: #{tw.$emerald-50};
+  --fch: #{tw.$red-400};
+  --accent: #{tw.$red-500};
+  --ach: #{tw.$red-500};
+}
+
+body {
+  font-family: Meiryo;
+  color: var(--fc);
+  background-color: var(--body);
+}
+
+a {
+  color: var(--fc);
+  &:hover {
+    color: var(--fch);
+  }
+}
+
+.wrapper {
+  height: 70vh;
+  min-height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem;
+}
+
+.profileImageContainer {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+  padding: 1rem 2rem 1rem 2rem;
+  border-radius: 10px 0 0 10px;
+  background-color: var(--conts);
+}
+.inputsList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  border-left: 2px solid var(--body);
+  padding: 1rem 2rem 1rem 2rem;
+  border-radius: 0 10px 10px 0;
+  gap: 2.5rem;
+  background-color: var(--conts);
+  input,
+  select {
+    background-color: var(--input);
+    border-radius: 6px;
+    border: 2px solid var(--body);
+    color: var(--fc);
+    transition: 100ms;
+  }
+  input::placeholder {
+    color: var(--color);
+  }
+  input:focus {
+    outline: 2px solid var(--accent);
+    padding: 0.5rem;
+  }
+}
+.usernamef {
+  opacity: 0;
+  z-index: -1111;
+  height: 0;
+  width: 0;
+  pointer-events: none;
+}
+button {
+  border-radius: 6px;
+  border: 2px solid var(--body);
+  color: var(--fc);
+  transition: 100ms;
+  background-color: var(--accent);
+  color: var(--body);
+  cursor: pointer;
+  &:hover {
+    background-color: var(--input);
+    color: var(--fc);
+  }
+}
+.ava1 {
+  --min-size: 250px;
+  $max-size: 50vw;
+  background-color: var(--body);
+  height: auto;
+  width: 200px;
+  border-radius: 50%;
+  max-width: $max-size;
+  margin-inline: auto;
+  aspect-ratio: 1/1 !important;
+  position: relative;
+  display: grid;
+  place-items: center;
+  * {
+    display: grid;
+    place-items: center;
+  }
+}
+.ava2 {
+  background-color: var(--accent);
+  height: 95%;
+  width: 95%;
+  border-radius: 50%;
+  aspect-ratio: 1/1;
+}
+.ava3 {
+  background-color: var(--body);
+  height: 95%;
+  width: 95%;
+  border-radius: 50%;
+  aspect-ratio: 1/1;
+  img {
+    height: 95%;
+    width: 95%;
+    border-radius: 50%;
+    overflow: hidden;
+    user-select: none;
+    pointer-events: none;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    display: block;
+  }
+}
