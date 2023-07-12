@@ -8,6 +8,9 @@ $questionable: $afk;
 $online: #6b8f76;
 $safe: $online;
 
+$link: #537582;
+$link-h: #6f95a4;
+
 /* ----- GENERAL COLORS ----- */
 
 $neutral-900: #232323;
@@ -56,28 +59,28 @@ $slate-l: #607d8b;
 $slate-d: #546e7a;
 
 :root {
-  --font: Yu Gothic UI Light;
-  --font-japanese: Yu Gothic UI Light;
-  --settingsicons: 1;
-  --accentcolor: rgb(74, 104, 143);
-  --accentcolor2: rgb(130, 78, 128);
-  --linkcolor: rgb(83, 117, 130);
-  --mentioncolor: #b39a6f;
-  --successcolor: #6b8f76;
-  --warningcolor: rgb(204, 187, 157);
-  --dangercolor: #8c4849;
+	--font: Yu Gothic UI Light;
+	--font-japanese: Yu Gothic UI Light;
+	--settingsicons: 1;
+	--accentcolor: rgb(74, 104, 143);
+	--accentcolor2: rgb(130, 78, 128);
+	--linkcolor: rgb(83, 117, 130);
+	--mentioncolor: #b39a6f;
+	--successcolor: #6b8f76;
+	--warningcolor: rgb(204, 187, 157);
+	--dangercolor: #8c4849;
 
-  --textbrightest: #f0cfc0;
-  --textbrighter: rgb(214, 187, 174);
-  --textbright: rgb(189, 177, 172);
-  --textdark: rgb(128, 116, 111);
-  --textdarker: rgb(89, 84, 81);
-  --textdarkest: #474341;
+	--textbrightest: #f0cfc0;
+	--textbrighter: rgb(214, 187, 174);
+	--textbright: rgb(189, 177, 172);
+	--textdark: rgb(128, 116, 111);
+	--textdarker: rgb(89, 84, 81);
+	--textdarkest: #474341;
 
-  --backgroundaccent: #323232;
-  --backgroundprimary: #3c3836;
-  --backgroundsecondary: #282828;
-  --backgroundsecondaryalt: #232323;
-  --backgroundtertiary: #232323;
-  --backgroundfloating: #232323;
+	--backgroundaccent: #323232;
+	--backgroundprimary: #3c3836;
+	--backgroundsecondary: #282828;
+	--backgroundsecondaryalt: #232323;
+	--backgroundtertiary: #232323;
+	--backgroundfloating: #232323;
 }

@@ -5,127 +5,54 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>API Controls</title>
-    <link rel="stylesheet" href="css/index.css" />
-    <script src="scripts/scripts.js"></script>
-    <link rel="shortcut icon" href="assets/favicon.png" type="image/png" />
+    <link rel="stylesheet" href="/css/index.css" />
+    <script src="/scripts/scripts.js"></script>
     <link rel="icon" href="assets/favicon.png" type="x-image/png" />
   </head>
   <body>
-    <div class="wrapper">
-      <div class="profileImageContainer">
-        <div class="ava1">
-          <div class="ava2">
-            <div class="ava3"><img id="avaImg" src="" alt="" /></div>
-          </div>
-        </div>
-        <a href="" target="_blank" class="url" id="avaUrl"></a>
-        <a href="" target="_blank" class="directUrl" id="directUrl"></a>
-        <p class="artist" id="artist"></p>
+    <main class="container">
+      <div class="profile">
+        <img src="" alt="" id="avaImg" />
+        <span>Avatar artist: <span id="artist"></span></span>
+        <a href="" target="_blank" id="avaUrl">e621 Link</a>
       </div>
-      <div class="inputsList">
-        <div class="inputC">
-          <div class="title">
-            <p class="previous" id="previousMood"></p>
-          </div>
-          <input type="text" name="Mood" id="mood" placeholder="" />
+      <div class="moodPreview">
+        <span>Preview</span>
+        <div id="moodPrev"></div>
+      </div>
+      <div class="themePreview" id="themePrev">
+        <div class="themeName">
+          <span>Current Theme: <span id="themeName"></span></span
+          ><select name="theme" id="theme">
+            <option value="none">None</option>
+            <option value="coffee">Coffee</option>
+            <option value="retro">Retro</option>
+            <option value="night">Night</option>
+            <option value="twitter">Twitter</option>
+            <option value="pink">Pink</option>
+            <option value="halloween">Halloween</option>
+            <option value="christmas">Christmas</option>
+          </select>
         </div>
-        <div class="inputC">
-          <div class="title"><p class="previous" id="previousSi"></p></div>
-          <input type="text" name="" id="special_interest" />
-        </div>
-        <div class="inputC">
-          <div class="title">
-            <select name="theme" id="theme">
-              <option value="none">None</option>
-              <option value="coffee">Coffee</option>
-              <option value="retro">Retro</option>
-              <option value="night">Night</option>
-              <option value="twitter">Twitter</option>
-              <option value="pink">Pink</option>
-              <option value="halloween">Halloween</option>
-              <option value="christmas">Christmas</option>
-            </select>
-          </div>
-        </div>
-        <div class="submitcont">
-          <input type="text" class="usernamef" />
-          <input type="password" name="password" id="password" />
-          <button id="updateB" type="submit" onclick="">Update</button>
+        <div class="themeCont">
+          <div class="themeCol1"></div>
+          <div class="themeCol2"></div>
+          <div class="themeCol3"></div>
+          <div class="themeCol4"></div>
         </div>
       </div>
-    </div>
-    <script>
-      const htmlBody = document.querySelector("body");
-      const avatarImg = document.getElementById("avaImg");
-      const avatarUrl = document.getElementById("avaUrl");
-      const avatarDirect = document.getElementById("directUrl");
-      const avatarArtist = document.getElementById("artist");
-      const moodInp = document.getElementById("mood");
-      const prevMood = document.getElementById("previousMood");
-      const siInp = document.getElementById("special_interest");
-      const prevSi = document.getElementById("previousSi");
-      const themeInp = document.getElementById("theme");
-      const userUrl = "https://site-api.fly.dev/data";
-      const passwordInp = document.getElementById("password");
-      const updateB = document.getElementById("updateB");
-      let mD;
-      async function init() {
-        const response = await fetch(userUrl);
-        data = await response.json();
-        htmlBody.setAttribute("site_theme", data.site_theme);
-        //moodInp.setAttribute("placeholder", data.mood);
-        avatarImg.src = data.avatar_url;
-        avatarDirect.href = data.avatar_url;
-        avatarDirect.innerText = "Direct Image Link";
-        avatarUrl.href = `https://e621.net/posts/${data.avatar_id}`;
-        avatarUrl.innerText = `Post Image Link`;
-        prevMood.innerText = "Current status:\n" + data.mood;
-        prevSi.innerText =
-          "Current Special Interest:\n" + data.special_interest;
-        // siInp.setAttribute("placeholder", data.special_interest);
-        md = data;
-        for (let i = 0; i < themeInp.options.length; i++) {
-          if (data.site_theme === htmlBody.getAttribute("site_theme")) {
-            themeInp.value = data.site_theme;
-          }
-        }
-        return data;
-      }
-      init();
-      themeInp.addEventListener("change", function () {
-        htmlBody.setAttribute("site_theme", themeInp.value);
-        console.log("cha");
-      });
-      updateB.onclick = function () {
-        let updateUrl = `https://site-api.fly.dev/update?password=${passwordInp.value}`;
-        let moodVal = moodInp.value;
-        if (moodVal === "") {
-          moodVal = data.mood;
-        }
-        let siVal = siInp.value;
-        if (siVal === "") {
-          siVal = data.special_interest;
-        }
-        fetch(updateUrl, {
-          method: "PATCH",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            mood: moodVal,
-            special_interest: siVal,
-            site_theme: themeInp.value,
-          }),
-        }).then((response) => {
-          moodInp.value = "";
-          siInp.value = "";
-          if (response.status === 200) {
-            alert("Updated!");
-          } else {
-            alert("Unauthorised, yikesssss");
-          }
-        });
-      };
-    </script>
+      <div class="moodInput">
+        <span>Mood</span><input type="text" id="moodInp" />
+      </div>
+      <div class="specialInterestSection">
+        <span>Special Interest</span><input id="spInp" type="text" />
+      </div>
+      <div class="submitSection">
+        <input type="password" name="password" id="password" />
+        <button id="updateButton" type="submit" onclick="">Update</button>
+      </div>
+    </main>
   </body>
 </html>
+
+<style></style>
